@@ -1,12 +1,13 @@
-export class Request {
-    request : string = "Request";
-    data : string = "";
+export class RequestInfos {
+    id: number = 0;
+    requestUser: string = "";
 
     /**
      *
      */
-    constructor(data : string) {
-        this.data = data;
+    constructor(request : string) {
+        this.requestUser = request;
+        
     }
 }
 

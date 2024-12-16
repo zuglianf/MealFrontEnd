@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'MealFrontEnd';
   Meals : Meal = new Meal();
 
-  request : string = "Arrabiata";
+  request : string = "Apple";
 
   constructor(private mealService : MealServiceService){
     this.Meals = new Meal();
@@ -26,9 +26,11 @@ export class AppComponent {
 
   retrieveMeal(){
     this.mealService.addFood(this.request).subscribe((data : Meal) => {
-      data.meals.forEach(element=> {
+      data.meals.forEach(element => {
+          this.Meals.meals.push(element);
           console.log(element)
       });
+    
     })
   }
   
