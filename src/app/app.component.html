@@ -1,0 +1,30 @@
+
+<div class="mb-4">
+  <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="name">
+      Ricette
+  </label>
+  <input 
+  id="name" type="text" [formControl] = "name"
+  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Cabbage">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+type="button" (click)="onClick()">Ricette</button>
+
+</div>
+
+
+<div class="grid lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1 gap-1">
+  <div *ngFor="let cibo of this.Meals.meals" class="grid-cols-2 shadow-lg flex justify-center items-center mb-2">
+    <img class="items-center" [src]="cibo.strMealThumb" alt="{{cibo.strTags}}"/>
+      <div class="px-6 py-4">
+        <div class="font-bold text-3xl mb-5">{{cibo.strMeal}}</div>
+        <p class="text-gray-700 text-base">
+            {{cibo.strInstructions}}
+        </p>
+      </div>
+      <div class="items-center  bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 rounded">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{{cibo.idMeal}}</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{{cibo.strCategory}}</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{{cibo.strTags}}</span>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+{
+    "/api": {
+        "target": "http://localhost:5082",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "serve": {
+        "builder": "@angular-devkit/build-angular:dev-server",
+        "configurations": {
+            "development": {
+                "proxyConfig": "proxy.conf.json"
+            }
+        }
+    }
+}
